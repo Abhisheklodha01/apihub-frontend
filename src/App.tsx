@@ -2,7 +2,7 @@
 function App() {
   return (
     <>
-     <h1>welcome to apihub</h1>
+     <h1 className="bg-gray-600 font-bold">welcome to apihub</h1>
     </>
   )
 }
