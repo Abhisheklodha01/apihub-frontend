@@ -1,10 +1,13 @@
+import Signup from "./pages/Signup";
 
 function App() {
   return (
     <>
-     <h1>welcome to apihub</h1>
+      <div className="dark bg-black">
+      <Signup />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
