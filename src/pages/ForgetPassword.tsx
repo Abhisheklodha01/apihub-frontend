@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Label } from "../components/ui/label";
-import { Input } from "../components/ui/input";
-import { cn } from "../lib/utils";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 // import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 // import axios from "axios";
 
@@ -24,16 +24,15 @@ export default function ForgetPassword() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black">
       <div className="pb-44"></div>
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-          Welcome to Api Hub
+          Welcome to API Stack
         </h2>
-        {/* <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-          Login to aceternity if you can because we don&apos;t have a login flow
-          yet
-        </p> */}
+        <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+           Enter your email address and new password to reset your old password and
+        </p>
 
         <form className="my-8" onSubmit={handleSubmit}>
           <LabelInputContainer className="mb-4">
