@@ -7,11 +7,11 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
     content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",
   theme: {
   	extend: {
       boxShadow: {
@@ -22,7 +22,13 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		colors: {colors}
+      colors: {
+        sky: colors.sky,
+        stone: colors.stone,
+        neutral: colors.neutral,
+        gray: colors.gray,
+        slate: colors.slate,
+      },
   	}
   },
   plugins: [addVariablesForColors, require("tailwindcss-animate"),],
