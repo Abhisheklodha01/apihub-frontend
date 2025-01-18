@@ -4,7 +4,6 @@ import Signin from "./pages/Signin";
 import ForgetPassword from "./pages/ForgetPassword";
 import Home from "./pages/Home";
 import { useEffect } from "react";
-// import NavBar from "./modules/NavBar";
 
 function App() {
   useEffect(() => {
@@ -13,7 +12,6 @@ function App() {
 
   return (
     <>
-      {/* <NavBar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
