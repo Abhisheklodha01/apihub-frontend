@@ -4,6 +4,7 @@ import Signin from "./pages/Signin";
 import ForgetPassword from "./pages/ForgetPassword";
 import Home from "./pages/Home";
 import { useEffect } from "react";
+import Sidebar from "./pages/Sidebar";
 
 function App() {
   useEffect(() => {
@@ -19,6 +20,9 @@ function App() {
         <Route path="/auth/signup" element={<Signup />} />
         <Route path="/auth/login" element={<Signin />} />
         <Route path="/auth/forget-password" element={<ForgetPassword />} />
+      </Routes>
+      <Routes>
+        <Route path="/docs/sidebar" element={<Sidebar />} />
       </Routes>
     </>
   );
