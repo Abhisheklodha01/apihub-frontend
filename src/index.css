@@ -1,8 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
-  :root {
+:root {
     --radius: 0.5rem
+    --background-color: #ffffff;
+    --text-color: #000000;
   }
+
+
+.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
