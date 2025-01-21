@@ -17,7 +17,11 @@ export function ButtonOutline({ text }: ButtonOutlineProps) {
     }
   };
   return (
-    <Button variant="outline" onClick={handleClick}>
+    <Button
+      variant="outline"
+      onClick={handleClick}
+      className="w-[350px] ml-8 md:ml-0 md:w-52 text-center"
+    >
       {text}
     </Button>
   );
