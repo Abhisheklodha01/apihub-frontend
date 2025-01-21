@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 type Language = "javascript" | "python" | "curl" | "ruby" | "rust";
 
 type CodeExamples = {
@@ -110,7 +109,7 @@ async fn main() -> Result<(), Error> {
       </div>
 
       <div className="bg-slate-800 rounded-lg p-4 overflow-x-auto">
-        <pre className="text-slate-100 font-mono text-sm whitespace-pre">
+        <pre className="text-slate-100 font-mono text-sm whitespace-pre ">
           {codeExamples[activeTab]}
         </pre>
       </div>

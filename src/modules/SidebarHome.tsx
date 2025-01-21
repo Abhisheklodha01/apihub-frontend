@@ -5,7 +5,6 @@ import {
   IconArrowLeft,
   IconBrandTabler,
   IconSettings,
-  IconUserBolt,
 } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -25,7 +24,7 @@ export default function SidebarHome() {
       label: "Profile",
       href: "#",
       icon: (
-        <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+       <button className="bg-green-500 rounded-full px-3 py-0.5 ">GET</button>
       ),
     },
     {
@@ -36,7 +35,7 @@ export default function SidebarHome() {
       ),
     },
     {
-      label: "",
+      label: "Image ",
       href: "#",
       icon: (
         <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
