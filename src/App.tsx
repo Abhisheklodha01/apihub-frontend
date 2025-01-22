@@ -4,7 +4,6 @@ import Signin from "./pages/Signin";
 import ForgetPassword from "./pages/ForgetPassword";
 import Home from "./pages/Home";
 import { useEffect } from "react"
-import Sidebar from "./pages/Sidebar";
 import { Admin } from "./pages/Admin";
 import { ArticleForm } from "./pages/ArticleForm";
 import { BookForm } from "./pages/BookForm";
@@ -26,6 +25,7 @@ import { QuotesForm } from "./pages/QuotesForm";
 import { ResturentsForm } from "./pages/ResturentsForm";
 import { TodoForm } from "./pages/TodoForm";
 import { Youtube_VideoForm } from "./pages/Youtube_VideoForm";
+import ApiDocs from "./pages/ApiDocs";
 
 function App() {
   useEffect(() => {
@@ -65,7 +65,7 @@ function App() {
         <Route path="/admin/youtube_videos" element={<Youtube_VideoForm />} />
       </Routes>
       <Routes>
-        <Route path="/docs/sidebar" element={<Sidebar />} />
+        <Route path="api/docs/" element={<ApiDocs />} />
       </Routes>
     </>
   );
