@@ -24,7 +24,7 @@ export default function Signin() {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen dark">
       <div className="pb-40"></div>
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
