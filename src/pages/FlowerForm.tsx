@@ -96,7 +96,7 @@ export const FlowerForm = () => {
             <Input
               name="description"
               id="description"
-              placeholder="enter car description"
+              placeholder="enter flower description"
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}

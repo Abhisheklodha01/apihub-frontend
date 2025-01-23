@@ -83,7 +83,7 @@ export const BookForm = () => {
             <Input
               name="description"
               id="description"
-              placeholder="enter car description"
+              placeholder="enter book description"
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
