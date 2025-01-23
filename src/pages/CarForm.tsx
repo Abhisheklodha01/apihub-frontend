@@ -111,7 +111,7 @@ export const CarForm = () => {
               id="description"
               placeholder="enter car description"
               type="text"
-              value={name}
+              value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </LabelInputContainer>
