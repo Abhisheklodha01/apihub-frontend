@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Code, ChevronRight, ChevronDown, Copy, Check } from "lucide-react";
 import { apiData, CodeExample } from "@/data/apiData";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const ApiDocs: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string | null>("articles");
@@ -206,11 +208,13 @@ const ApiDocs: React.FC = () => {
               </div>
               <pre className="p-4 text-slate-300 overflow-x-auto">
                 <code>
-                  {
-                    apiData[activeSection].endpoints[activeEndpoint].code[
-                      activeLanguage as keyof CodeExample
-                    ]
-                  }
+                  <SyntaxHighlighter language="javascript" style={darcula}>
+                    {
+                      apiData[activeSection].endpoints[activeEndpoint].code[
+                        activeLanguage as keyof CodeExample
+                      ]
+                    }
+                  </SyntaxHighlighter>
                 </code>
               </pre>
             </div>
@@ -247,7 +251,9 @@ const ApiDocs: React.FC = () => {
               </div>
               <pre className="p-4 text-slate-300 overflow-x-auto">
                 <code>
-                  {apiData[activeSection].endpoints[activeEndpoint].response}
+                  <SyntaxHighlighter language="json" style={darcula}>
+                    {apiData[activeSection].endpoints[activeEndpoint].response}
+                  </SyntaxHighlighter>
                 </code>
               </pre>
             </div>
