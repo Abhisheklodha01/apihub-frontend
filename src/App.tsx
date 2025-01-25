@@ -61,7 +61,7 @@ function App() {
         <Route path="/admin/programming" element={<ProgrammingForm />} />
         <Route path="/admin/quotes" element={<QuotesForm />} />
         <Route path="/admin/resturents" element={<ResturentsForm />} />
-        <Route path="/admin/todo" element={<TodoForm />} />
+        <Route path="/admin/todos" element={<TodoForm />} />
         <Route path="/admin/youtube_videos" element={<Youtube_VideoForm />} />
       </Routes>
       <Routes>
