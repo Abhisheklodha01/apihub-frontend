@@ -3,7 +3,7 @@ import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 import ForgetPassword from "./pages/ForgetPassword";
 import Home from "./pages/Home";
-import { useEffect } from "react"
+import { useContext, useEffect } from "react";
 import { Admin } from "./pages/Admin";
 import { ArticleForm } from "./pages/ArticleForm";
 import { BookForm } from "./pages/BookForm";
@@ -15,7 +15,7 @@ import { FlowerForm } from "./pages/FlowerForm";
 import { Food_NutritionForm } from "./pages/Food_NutritionForm";
 import { HotalForm } from "./pages/HotalForm";
 import { ImageForm } from "./pages/ImageForm";
-import { Insta_ReelForm } from "./pages/Insta_ReelForm";
+import { Insta_ReelsForm } from "./pages/Insta_ReelForm";
 import { JokesForm } from "./pages/JokesForm";
 import { MovieForm } from "./pages/MovieForm";
 import { PlantForm } from "./pages/PlantForm";
@@ -26,8 +26,32 @@ import { ResturentsForm } from "./pages/ResturentsForm";
 import { TodoForm } from "./pages/TodoForm";
 import { Youtube_VideoForm } from "./pages/Youtube_VideoForm";
 import ApiDocs from "./pages/ApiDocs";
+import { userContex } from "./context/userContex";
+import { backendUrl } from "./utils/server";
+import axios from "axios";
 
 function App() {
+  const { isAuthenticated, setUser, setIsAuthenticated } =
+    useContext(userContex);
+  const token = localStorage.getItem("APIStack-Auth_Token");
+  useEffect(() => {
+    axios
+      .get(`${backendUrl}/users/getuserprofile`, {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        setUser(res.data.user);
+        setIsAuthenticated(true);
+      })
+      .catch((error: any) => {
+        console.log(error);
+        setUser(undefined);
+        setIsAuthenticated(false);
+      });
+  }, [isAuthenticated]);
   useEffect(() => {
     document.documentElement.classList.add("dark");
   }, []);
@@ -53,14 +77,14 @@ function App() {
 
         <Route path="/admin/hotals" element={<HotalForm />} />
         <Route path="/admin/images" element={<ImageForm />} />
-        <Route path="/admin/insta_reels" element={<Insta_ReelForm />} />
+        <Route path="/admin/insta_reels" element={<Insta_ReelsForm />} />
         <Route path="/admin/jokes" element={<JokesForm />} />
         <Route path="/admin/movies" element={<MovieForm />} />
         <Route path="/admin/plants" element={<PlantForm />} />
         <Route path="/admin/products" element={<ProductForm />} />
         <Route path="/admin/programming" element={<ProgrammingForm />} />
         <Route path="/admin/quotes" element={<QuotesForm />} />
-        <Route path="/admin/resturents" element={<ResturentsForm />} />
+        <Route path="/admin/restaurents" element={<ResturentsForm />} />
         <Route path="/admin/todos" element={<TodoForm />} />
         <Route path="/admin/youtube_videos" element={<Youtube_VideoForm />} />
       </Routes>
