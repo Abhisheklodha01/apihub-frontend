@@ -50,7 +50,7 @@ export const ImageForm = () => {
           Welcome to API Stack
         </h2>
         <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-          Add Book Data!
+          Add Image Data!
         </p>
 
         <form className="my-8" onSubmit={handleSubmit}>
