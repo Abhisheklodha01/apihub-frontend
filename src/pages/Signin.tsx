@@ -3,6 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 // import axios from "axios";
 
 export default function Signin() {
@@ -88,6 +89,14 @@ export default function Signin() {
               </span>
               <BottomGradient />
             </button>
+          </div>
+          <div className="text-white text-xl mt-8">
+            <p className="text-center">
+              Don't have an account?{" "}
+              <span className="text-purple-600">
+                <Link to={"/auth/signup"}>Signup</Link>
+              </span>
+            </p>
           </div>
         </form>
       </div>
