@@ -1,8 +1,12 @@
 import { userContex } from "@/context/userContex";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const UserProfile = () => {
+  const navigate = useNavigate();
   const { user } = React.useContext(userContex);
+  if (user?.isVerified === false) {
+    navigate("/auth/verify-email");
+  }
   return (
     <div className="min-h-screen dark:">
       <div className="m-5 items-center flex justify-between">
