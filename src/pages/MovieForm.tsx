@@ -69,6 +69,7 @@ export const MovieForm = () => {
               id="title"
               placeholder="enter movie title"
               type="text"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -80,6 +81,7 @@ export const MovieForm = () => {
               id="dorector"
               placeholder="enter director of movie"
               type="text"
+              required
               value={director}
               onChange={(e) => setDirector(e.target.value)}
             />
@@ -91,6 +93,7 @@ export const MovieForm = () => {
               id="realeseDate"
               placeholder="enter release date of movie"
               type="text"
+              required
               value={realeseDate}
               onChange={(e) => setRealeseDate(e.target.value)}
             />
@@ -102,6 +105,7 @@ export const MovieForm = () => {
               id="description"
               placeholder="enter Movie description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -113,6 +117,7 @@ export const MovieForm = () => {
               id="image"
               type="file"
               accept="image/*"
+              required
               value={image}
               onChange={(e) => setImage(e.target.value)}
             />
@@ -127,7 +132,7 @@ export const MovieForm = () => {
           >
              {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

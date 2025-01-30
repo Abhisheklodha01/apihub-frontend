@@ -65,6 +65,7 @@ export const CatForm = () => {
               id="name"
               placeholder="enter cat name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -76,6 +77,7 @@ export const CatForm = () => {
               id="breed"
               placeholder="enter cat breed"
               type="text"
+              required
               value={breed}
               onChange={(e) => setBreed(e.target.value)}
             />
@@ -87,6 +89,7 @@ export const CatForm = () => {
               id="location"
               placeholder="enter cat launch location"
               type="text"
+              required
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
@@ -98,6 +101,7 @@ export const CatForm = () => {
               id="imageUrl"
               placeholder="enter url of cat image"
               type="text"
+              required
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             />
@@ -109,6 +113,7 @@ export const CatForm = () => {
               id="description"
               placeholder="enter cat description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -123,7 +128,7 @@ export const CatForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

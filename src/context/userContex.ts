@@ -6,6 +6,9 @@ export interface User {
     name: string;
     phoneNumber: string;
     password: string;
+    isVerified: boolean
+    accessToken: string,
+    otp: string,
   }
   
   interface userContextType {

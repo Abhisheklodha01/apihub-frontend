@@ -67,6 +67,7 @@ export const PlantForm = () => {
               id="name"
               placeholder="enter plant name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -78,6 +79,7 @@ export const PlantForm = () => {
               id="species"
               placeholder="enter plant species"
               type="text"
+              required
               value={species}
               onChange={(e) => setSpecies(e.target.value)}
             />
@@ -89,6 +91,7 @@ export const PlantForm = () => {
               id="description"
               placeholder="enter plant description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -100,6 +103,7 @@ export const PlantForm = () => {
               id="image"
               type="file"
               accept="image/*"
+              required
               value={image}
               onChange={(e) => setImage(e.target.value)}
             />
@@ -114,7 +118,7 @@ export const PlantForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

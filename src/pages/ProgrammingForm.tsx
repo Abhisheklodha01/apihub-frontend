@@ -65,6 +65,7 @@ export const ProgrammingForm = () => {
               id="name"
               placeholder="enter progaramming language name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -76,6 +77,7 @@ export const ProgrammingForm = () => {
               id="creator"
               placeholder="enter progaramming language creator name"
               type="text"
+              required
               value={creator}
               onChange={(e) => setCreator(e.target.value)}
             />
@@ -87,6 +89,7 @@ export const ProgrammingForm = () => {
               id="year"
               placeholder="enter progaramming language name"
               type="number"
+              required
               value={year}
               onChange={(e) => setYear(e.target.value)}
             />
@@ -98,6 +101,7 @@ export const ProgrammingForm = () => {
               id="runtime"
               placeholder="enter language runtime"
               type="text"
+              required
               value={runtime}
               onChange={(e) => setRuntime(e.target.value)}
             />
@@ -123,7 +127,7 @@ export const ProgrammingForm = () => {
           >
              {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

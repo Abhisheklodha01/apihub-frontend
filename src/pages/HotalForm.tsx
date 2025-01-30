@@ -65,6 +65,7 @@ export const HotalForm = () => {
               id="name"
               placeholder="Enter hotel name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -76,6 +77,7 @@ export const HotalForm = () => {
               id="location"
               placeholder="Enter hotel location"
               type="text"
+              required
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
@@ -87,6 +89,7 @@ export const HotalForm = () => {
               id="city"
               placeholder="Enter city where hotel is located"
               type="text"
+              required
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
@@ -98,6 +101,7 @@ export const HotalForm = () => {
               id="priceRange"
               placeholder="Enter priceRange of hotel"
               type="text"
+              required
               value={priceRange}
               onChange={(e) => setPriceRange(e.target.value)}
             />
@@ -109,6 +113,7 @@ export const HotalForm = () => {
               id="description"
               placeholder="Enter Hotel description like famous things"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -123,7 +128,7 @@ export const HotalForm = () => {
           >
              {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >
