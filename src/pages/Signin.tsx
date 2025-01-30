@@ -1,27 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
-// import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { backendUrl } from "@/utils/server";
+import { userContex } from "@/context/userContex";
+import toast from "react-hot-toast";
 
 export default function Signin() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  
-  const handleChange = (event: { target: { name: string; value: string; }; }) => {
-    const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const navigate = useNavigate()
+  const [email, setEmail] = React.useState<string>("")
+  const [password, setPassword] = React.useState<string>("")
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const { setIsAuthenticated, setUser } = React.useContext(userContex);
 
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+  
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const { data } = await axios.post(
+        `${backendUrl}/users/signin`,
+        {
+          email,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+      setLoading(false);
+      setIsAuthenticated(true);
+      setUser(data.user);
+      toast.success(data.message, {
+        position: "top-center",
+      });
+      navigate("/user-profile")
+    } catch (error: any) {
+      setLoading(false);
+      toast.error(error.response.data.message, {
+        position: "top-center",
+      });
+    }
   };
 
   return (
@@ -43,8 +68,8 @@ export default function Signin() {
               id="email"
               placeholder="projectmayhem@fc.com"
               type="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
@@ -54,15 +79,25 @@ export default function Signin() {
               id="password"
               placeholder="••••••••"
               type="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </LabelInputContainer>
           <button
             className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Login &rarr;
+            {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Sign In &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 
