@@ -1,7 +1,7 @@
 import { ApiSection } from "./apiData";
 
 export const articlesData: Record<string, ApiSection> = {
- articles: {
+  articles: {
     name: "Articles",
     description: "Manage and retrieve articles from the database",
     endpoints: {
@@ -167,5 +167,5 @@ export const articlesData: Record<string, ApiSection> = {
   }`,
       },
     },
- }
+  },
 };
