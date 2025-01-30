@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { backendUrl } from "@/utils/server";
@@ -7,15 +7,17 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 
 export const CountryForm = () => {
-  const [name, setName] = useState<string>("");
-  const [population, setPopulation] = useState<string>("");
-  const [capital, setCapital] = useState<string>("");
-  const [currency, setCurrency] = useState<string>("");
-  const [description, setDescription] = useState<string>();
+  const [name, setName] = React.useState<string>("");
+  const [population, setPopulation] = React.useState<string>("");
+  const [capital, setCapital] = React.useState<string>("");
+  const [currency, setCurrency] = React.useState<string>("");
+  const [description, setDescription] = React.useState<string>();
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${backendUrl}/countries/add-country`,
         {
@@ -32,10 +34,12 @@ export const CountryForm = () => {
           withCredentials: true,
         }
       );
+      setLoading(false);
       toast.success(data.message, {
         position: "top-center",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.response.data.message, {
         position: "top-center",
       });
@@ -117,7 +121,17 @@ export const CountryForm = () => {
                dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Add Country &rarr;
+            {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Add Country &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 
