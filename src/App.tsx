@@ -29,6 +29,7 @@ import ApiDocs from "./pages/ApiDocs";
 import { userContex } from "./context/userContex";
 import { backendUrl } from "./utils/server";
 import axios from "axios";
+import { UserProfile } from "./pages/UserProfile";
 
 function App() {
   const { isAuthenticated, setUser, setIsAuthenticated } =
@@ -74,7 +75,6 @@ function App() {
         <Route path="/admin/dogs" element={<DogForm />} />
         <Route path="/admin/flowers" element={<FlowerForm />} />
         <Route path="/admin/food_nutritions" element={<Food_NutritionForm />} />
-
         <Route path="/admin/hotals" element={<HotalForm />} />
         <Route path="/admin/images" element={<ImageForm />} />
         <Route path="/admin/insta_reels" element={<Insta_ReelsForm />} />
@@ -87,6 +87,7 @@ function App() {
         <Route path="/admin/restaurents" element={<ResturentsForm />} />
         <Route path="/admin/todos" element={<TodoForm />} />
         <Route path="/admin/youtube_videos" element={<Youtube_VideoForm />} />
+        <Route path="/user-profile" element={<UserProfile />} />
       </Routes>
       <Routes>
         <Route path="api/docs/" element={<ApiDocs />} />
