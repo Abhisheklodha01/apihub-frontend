@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { backendUrl } from "@/utils/server";
@@ -7,16 +7,18 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 
 export const Food_NutritionForm = () => {
-  const [food_name, setFood_Name] = useState<string>("");
-  const [servingSize, setServingSize] = useState<string>("");
-  const [calories, setCalories] = useState<string>("");
-  const [protein, setProtein] = useState<string>("");
-  const [carbohydrates, setCarbohydrates] = useState<string>();
-  const [fats, setFats] = useState<string>("");
+  const [food_name, setFood_Name] = React.useState<string>("");
+  const [servingSize, setServingSize] = React.useState<string>("");
+  const [calories, setCalories] = React.useState<string>("");
+  const [protein, setProtein] = React.useState<string>("");
+  const [carbohydrates, setCarbohydrates] = React.useState<string>();
+  const [fats, setFats] = React.useState<string>("");
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${backendUrl}/foodnutritions/add-foodnutrition`,
         {
@@ -34,10 +36,12 @@ export const Food_NutritionForm = () => {
           withCredentials: true,
         }
       );
+      setLoading(false);
       toast.success(data.message, {
         position: "top-center",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.response.data.message, {
         position: "top-center",
       });
@@ -130,7 +134,17 @@ export const Food_NutritionForm = () => {
                dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Add Food &rarr;
+             {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Add Food &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 
