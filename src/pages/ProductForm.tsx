@@ -68,6 +68,7 @@ export const ProductForm = () => {
               id="name"
               placeholder="Enter product name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -79,6 +80,7 @@ export const ProductForm = () => {
               id="categories"
               placeholder="Enter Available Food Type"
               type="text"
+              required
               value={categories}
               onChange={(e) => setCategories(e.target.value)}
             />
@@ -90,6 +92,7 @@ export const ProductForm = () => {
               id="price"
               placeholder="Enter product price"
               type="number"
+              required
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
@@ -101,6 +104,7 @@ export const ProductForm = () => {
               id="availableOn"
               placeholder="Enter website/app name where product available"
               type="text"
+              required
               value={availableOn}
               onChange={(e) => setAvailableOn(e.target.value)}
             />
@@ -112,6 +116,7 @@ export const ProductForm = () => {
               id="url"
               placeholder="Enter url of the product"
               type="text"
+              required
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
@@ -123,6 +128,7 @@ export const ProductForm = () => {
               id="description"
               placeholder="Enter product description like specifications"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -137,7 +143,7 @@ export const ProductForm = () => {
           >
              {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

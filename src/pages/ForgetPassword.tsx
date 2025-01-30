@@ -63,6 +63,7 @@ export default function ForgetPassword() {
               id="email"
               placeholder="email@apistack.site"
               type="email"
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -74,6 +75,7 @@ export default function ForgetPassword() {
               id="password"
               placeholder="••••••••"
               type="password"
+              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -84,7 +86,7 @@ export default function ForgetPassword() {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

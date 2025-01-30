@@ -61,6 +61,7 @@ export const JokesForm = () => {
               id="title"
               placeholder="enter joke title"
               type="text"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -72,6 +73,7 @@ export const JokesForm = () => {
               id="type"
               placeholder="enter joke type"
               type="text"
+              required
               value={type}
               onChange={(e) => setType(e.target.value)}
             />
@@ -83,6 +85,7 @@ export const JokesForm = () => {
               id="description"
               placeholder="enter joke description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -97,7 +100,7 @@ export const JokesForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

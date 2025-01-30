@@ -71,6 +71,7 @@ export const CarForm = () => {
               id="name"
               placeholder="enter car name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -82,6 +83,7 @@ export const CarForm = () => {
               id="model"
               placeholder="enter car model"
               type="text"
+              required
               value={model}
               onChange={(e) => setModel(e.target.value)}
             />
@@ -93,6 +95,7 @@ export const CarForm = () => {
               id="year"
               placeholder="enter car launch year"
               type="number"
+              required
               value={year}
               onChange={(e) => setYear(e.target.value)}
             />
@@ -104,6 +107,7 @@ export const CarForm = () => {
               id="mileage"
               placeholder="enter car millage"
               type="number"
+              required
               value={mileage}
               onChange={(e) => setMileage(e.target.value)}
             />
@@ -115,6 +119,7 @@ export const CarForm = () => {
               id="description"
               placeholder="enter car description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -126,6 +131,7 @@ export const CarForm = () => {
               id="image"
               type="file"
               accept="image/*"
+              required
               value={image}
               onChange={(e) => setImage(e.target.value)}
             />
@@ -140,7 +146,7 @@ export const CarForm = () => {
           >
              {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

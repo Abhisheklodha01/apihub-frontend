@@ -65,6 +65,7 @@ export const Insta_ReelsForm = () => {
               id="title"
               placeholder="enter reel title"
               type="text"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -76,6 +77,7 @@ export const Insta_ReelsForm = () => {
               id="description"
               placeholder="enter reel description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -87,6 +89,7 @@ export const Insta_ReelsForm = () => {
               id="image"
               type="file"
               accept="video/*"
+              required
               value={video}
               onChange={(e) => setVideo(e.target.value)}
             />
@@ -101,7 +104,7 @@ export const Insta_ReelsForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

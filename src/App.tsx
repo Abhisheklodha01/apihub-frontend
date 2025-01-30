@@ -30,6 +30,7 @@ import { userContex } from "./context/userContex";
 import { backendUrl } from "./utils/server";
 import axios from "axios";
 import { UserProfile } from "./pages/UserProfile";
+import { EmailVerification } from "./pages/EmailVerification";
 
 function App() {
   const { isAuthenticated, setUser, setIsAuthenticated } =
@@ -88,6 +89,7 @@ function App() {
         <Route path="/admin/todos" element={<TodoForm />} />
         <Route path="/admin/youtube_videos" element={<Youtube_VideoForm />} />
         <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/auth/verify-email" element={<EmailVerification />} />
       </Routes>
       <Routes>
         <Route path="api/docs/" element={<ApiDocs />} />

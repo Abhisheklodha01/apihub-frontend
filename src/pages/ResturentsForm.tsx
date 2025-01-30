@@ -69,6 +69,7 @@ export const ResturentsForm = () => {
               id="name"
               placeholder="Enter restuarent name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -80,6 +81,7 @@ export const ResturentsForm = () => {
               id="foodType"
               placeholder="Enter Available Food Type"
               type="text"
+              required
               value={foodType}
               onChange={(e) => setFoodType(e.target.value)}
             />
@@ -91,6 +93,7 @@ export const ResturentsForm = () => {
               id="r_type"
               placeholder="Enter restuarent type veg or nonveg "
               type="text"
+              required
               value={restaurantType}
               onChange={(e) => setRestaurantType(e.target.value)}
             />
@@ -102,6 +105,7 @@ export const ResturentsForm = () => {
               id="location"
               placeholder="Enter restuarent location"
               type="text"
+              required
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
@@ -113,6 +117,7 @@ export const ResturentsForm = () => {
               id="city"
               placeholder="Enter city where restuarent is located"
               type="text"
+              required
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
@@ -124,6 +129,7 @@ export const ResturentsForm = () => {
               id="priceRange"
               placeholder="Enter priceRange of restuarent"
               type="text"
+              required
               value={priceRange}
               onChange={(e) => setPriceRange(e.target.value)}
             />
@@ -135,6 +141,7 @@ export const ResturentsForm = () => {
               id="description"
               placeholder="Enter restaurent description like famous things"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -149,7 +156,7 @@ export const ResturentsForm = () => {
           >
              {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

@@ -61,6 +61,7 @@ export const Youtube_VideoForm = () => {
               id="title"
               placeholder="enter video title"
               type="text"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -72,6 +73,7 @@ export const Youtube_VideoForm = () => {
               id="url"
               placeholder="enter video url"
               type="text"
+              required
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
@@ -83,6 +85,7 @@ export const Youtube_VideoForm = () => {
               id="description"
               placeholder="enter video description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -97,7 +100,7 @@ export const Youtube_VideoForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

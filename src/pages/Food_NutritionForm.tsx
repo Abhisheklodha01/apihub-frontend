@@ -78,6 +78,7 @@ export const Food_NutritionForm = () => {
               id="serving_size"
               placeholder="Enter serving size"
               type="text"
+              required
               value={servingSize}
               onChange={(e) => setServingSize(e.target.value)}
             />
@@ -89,6 +90,7 @@ export const Food_NutritionForm = () => {
               id="calories"
               placeholder="Enter food calories"
               type="text"
+              required
               value={calories}
               onChange={(e) => setCalories(e.target.value)}
             />
@@ -100,6 +102,7 @@ export const Food_NutritionForm = () => {
               id="protien"
               placeholder="Enter how much protien present"
               type="text"
+              required
               value={protein}
               onChange={(e) => setProtein(e.target.value)}
             />
@@ -111,6 +114,7 @@ export const Food_NutritionForm = () => {
               id="carbohydrates"
               placeholder="Enter carbohydrates rate"
               type="text"
+              required
               value={carbohydrates}
               onChange={(e) => setCarbohydrates(e.target.value)}
             />
@@ -122,6 +126,7 @@ export const Food_NutritionForm = () => {
               id="fats"
               placeholder="Enter how much fat present in food"
               type="text"
+              required
               value={fats}
               onChange={(e) => setFats(e.target.value)}
             />
@@ -136,7 +141,7 @@ export const Food_NutritionForm = () => {
           >
              {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

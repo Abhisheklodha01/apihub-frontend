@@ -65,6 +65,7 @@ export const CountryForm = () => {
               id="name"
               placeholder="Enter country name"
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -76,6 +77,7 @@ export const CountryForm = () => {
               id="capital"
               placeholder="Enter capital name"
               type="text"
+              required
               value={capital}
               onChange={(e) => setCapital(e.target.value)}
             />
@@ -87,6 +89,7 @@ export const CountryForm = () => {
               id="population"
               placeholder="Enter population"
               type="text"
+              required
               value={population}
               onChange={(e) => setPopulation(e.target.value)}
             />
@@ -98,6 +101,7 @@ export const CountryForm = () => {
               id="currency"
               placeholder="Enter currency name"
               type="text"
+              required
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
             />
@@ -109,6 +113,7 @@ export const CountryForm = () => {
               id="description"
               placeholder="Enter country description like famous things"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -123,7 +128,7 @@ export const CountryForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

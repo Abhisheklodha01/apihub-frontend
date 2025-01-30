@@ -61,6 +61,7 @@ export const ArticleForm = () => {
               id="title"
               placeholder="enter article title"
               type="text"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -72,6 +73,7 @@ export const ArticleForm = () => {
               id="author"
               placeholder="enter article author"
               type="text"
+              required
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
             />
@@ -83,6 +85,7 @@ export const ArticleForm = () => {
               id="content"
               placeholder="enter article content"
               type="text"
+              required
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />
@@ -93,7 +96,7 @@ export const ArticleForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >

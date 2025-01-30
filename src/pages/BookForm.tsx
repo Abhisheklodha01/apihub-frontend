@@ -67,6 +67,7 @@ export const BookForm = () => {
               id="title"
               placeholder="enter book title"
               type="text"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -78,6 +79,7 @@ export const BookForm = () => {
               id="author"
               placeholder="enter name of book author"
               type="text"
+              required
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
             />
@@ -89,6 +91,7 @@ export const BookForm = () => {
               id="description"
               placeholder="enter book description"
               type="text"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -100,6 +103,7 @@ export const BookForm = () => {
               id="image"
               type="file"
               accept="image/*"
+              required
               value={image}
               onChange={(e) => setImage(e.target.value)}
             />
@@ -114,7 +118,7 @@ export const BookForm = () => {
           >
             {loading ? (
               <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
                 role="status"
                 aria-label="loading"
               >
