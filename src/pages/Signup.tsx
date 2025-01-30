@@ -40,10 +40,11 @@ export default function Signup() {
       setLoading(false);
       setIsAuthenticated(true);
       setUser(data.user);
+      localStorage.setItem("APIStack-auth_token", data.auth_token)
       toast.success(data.message, {
         position: "top-center",
       });
-      navigate("/user-profile");
+      navigate("/auth/verify-email");
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

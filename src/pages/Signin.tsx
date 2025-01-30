@@ -37,6 +37,7 @@ export default function Signin() {
       setLoading(false);
       setIsAuthenticated(true);
       setUser(data.user);
+      localStorage.setItem("APIStack-auth_token", data.auth_token)
       toast.success(data.message, {
         position: "top-center",
       });
