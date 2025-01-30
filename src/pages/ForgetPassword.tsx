@@ -1,26 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-// import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
-// import axios from "axios";
+import toast from "react-hot-toast";
+import { backendUrl } from "@/utils/server";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function ForgetPassword() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  
-  const handleChange = (event: { target: { name: string; value: string; }; }) => {
-    const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const navigate = useNavigate();
+  const [email, setEmail] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
+  const [loading, setLoading] = React.useState<boolean>(false);
 
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const { data } = await axios.post(
+        `${backendUrl}/users/forgot-password`,
+        {
+          email,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+      setLoading(false);
+      toast.success(data.message, {
+        position: "top-center",
+      });
+      navigate("/auth/login");
+    } catch (error: any) {
+      setLoading(false);
+      toast.error(error.response.data.message, {
+        position: "top-center",
+      });
+    }
   };
 
   return (
@@ -31,37 +51,48 @@ export default function ForgetPassword() {
           Welcome to API Stack
         </h2>
         <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-           Enter your email address and new password to reset your old password and
+          Enter your email address and new password to reset your old password
+          and
         </p>
 
         <form className="my-8" onSubmit={handleSubmit}>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="email">Email Address</Label>
             <Input
-            name="email"
+              name="email"
               id="email"
-              placeholder="projectmayhem@fc.com"
+              placeholder="email@apistack.site"
               type="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="password">Password</Label>
             <Input
-            name="password"
+              name="password"
               id="password"
               placeholder="••••••••"
               type="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </LabelInputContainer>
           <button
             className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Forget Password &rarr;
+            {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Forgot Password &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 
