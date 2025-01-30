@@ -1,32 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
-// import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { backendUrl } from "@/utils/server";
+import { userContex } from "@/context/userContex";
+import toast from "react-hot-toast";
 
 export default function Signup() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    phoneNumber: "",
-  });
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(true);
-  const handleChange = (event: { target: { name: string; value: string } }) => {
-    const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const navigate = useNavigate();
+  const [name, setName] = React.useState<string>("");
+  const [email, setEmail] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
+  const [phoneNumber, setPhoneNumber] = React.useState<string>("");
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const { setIsAuthenticated, setUser } = React.useContext(userContex);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const { data } = await axios.post(
+        `${backendUrl}/users/register`,
+        {
+          name,
+          email,
+          password,
+          phoneNumber,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+      setLoading(false);
+      setIsAuthenticated(true);
+      setUser(data.user);
+      toast.success(data.message, {
+        position: "top-center",
+      });
+      navigate("/user-profile");
+    } catch (error: any) {
+      setLoading(false);
+      toast.error(error.response.data.message, {
+        position: "top-center",
+      });
+    }
   };
-  // if (loading) return <div>Loading...</div>;
   return (
     <div className="min-h-screen bg-black">
       <div className="pb-20"></div>
@@ -47,8 +71,8 @@ export default function Signup() {
                 id="name"
                 placeholder="Api Hub"
                 type="text"
-                value={formData.name}
-                onChange={handleChange}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </LabelInputContainer>
           </div>
@@ -57,10 +81,10 @@ export default function Signup() {
             <Input
               name="email"
               id="email"
-              placeholder="example@apihub.in"
+              placeholder="example@apistack.site"
               type="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
@@ -70,8 +94,8 @@ export default function Signup() {
               id="password"
               placeholder="••••••••"
               type="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-8">
@@ -81,8 +105,8 @@ export default function Signup() {
               id="phoneNumber"
               placeholder="+91 (123) 456-7890"
               type="tel"
-              value={formData.phoneNumber}
-              onChange={handleChange}
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </LabelInputContainer>
 
@@ -90,7 +114,17 @@ export default function Signup() {
             className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Sign up &rarr;
+            {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Signup &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 
