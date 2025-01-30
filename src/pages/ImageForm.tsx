@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { backendUrl } from "@/utils/server";
@@ -7,9 +7,10 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 
 export const ImageForm = () => {
-  const [name, setName] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [image, setImage] = useState<any>();
+  const [name, setName] = React.useState<string>("");
+  const [description, setDescription] = React.useState<string>("");
+  const [image, setImage] = React.useState<any>();
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const formData = new FormData();
   formData.append("name", name);
@@ -20,6 +21,7 @@ export const ImageForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${backendUrl}/images/upload-image`,
         {
@@ -32,10 +34,12 @@ export const ImageForm = () => {
           withCredentials: true,
         }
       );
+      setLoading(false);
       toast.success(data.message, {
         position: "top-center",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.response.data.message, {
         position: "top-center",
       });
@@ -95,7 +99,17 @@ export const ImageForm = () => {
                dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Add Image &rarr;
+             {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Add Image &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 

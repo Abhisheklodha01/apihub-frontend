@@ -1,26 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-// import axios from "axios";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { backendUrl } from "@/utils/server";
 
 export const ArticleForm = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    author: "",
-    content: ""
-  });
-
-  const handleChange = (event: { target: { name: string; value: string } }) => {
-    const { name, value } = event.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const [title, setTitle] = React.useState<string>("");
+  const [author, setAuthor] = React.useState<string>("");
+  const [content, setContent] = React.useState<string>("");
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    try {
+      setLoading(true);
+      const { data } = await axios.post(
+        `${backendUrl}/articles/add-article`,
+        {
+          title,
+          author,
+          content,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+      setLoading(false);
+      toast.success(data.message, {
+        position: "top-center",
+      });
+    } catch (error: any) {
+      setLoading(false);
+      toast.error(error.response.data.message, {
+        position: "top-center",
+      });
+    }
   };
 
   return (
@@ -42,8 +61,8 @@ export const ArticleForm = () => {
               id="title"
               placeholder="enter article title"
               type="text"
-              value={formData.title}
-              onChange={handleChange}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
@@ -53,8 +72,8 @@ export const ArticleForm = () => {
               id="author"
               placeholder="enter article author"
               type="text"
-              value={formData.author}
-              onChange={handleChange}
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
@@ -64,15 +83,25 @@ export const ArticleForm = () => {
               id="content"
               placeholder="enter article content"
               type="text"
-              value={formData.content}
-              onChange={handleChange}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
             />
           </LabelInputContainer>
           <button
             className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Add Article &rarr;
+            {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Add Article &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 

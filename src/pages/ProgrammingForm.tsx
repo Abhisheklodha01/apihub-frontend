@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { backendUrl } from "@/utils/server";
@@ -7,15 +7,17 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 
 export const ProgrammingForm = () => {
-  const [name, setName] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [creator, setCreator] = useState<string>("");
-  const [year, setYear] = useState<string>();
-  const [runtime, setRuntime] = useState<string>();
+  const [name, setName] = React.useState<string>("");
+  const [description, setDescription] = React.useState<string>("");
+  const [creator, setCreator] = React.useState<string>("");
+  const [year, setYear] = React.useState<string>();
+  const [runtime, setRuntime] = React.useState<string>();
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${backendUrl}/programming/add-programming-language`,
         {
@@ -32,10 +34,12 @@ export const ProgrammingForm = () => {
           withCredentials: true,
         }
       );
+      setLoading(false);
       toast.success(data.message, {
         position: "top-center",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.response.data.message, {
         position: "top-center",
       });
@@ -117,7 +121,17 @@ export const ProgrammingForm = () => {
                dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Add Language &rarr;
+             {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Add Language &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 
