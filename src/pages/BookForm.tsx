@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { backendUrl } from "@/utils/server";
@@ -7,10 +7,11 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 
 export const BookForm = () => {
-  const [title, setTitle] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [author, setAuthor] = useState<string>("");
-  const [image, setImage] = useState<any>();
+  const [title, setTitle] = React.useState<string>("");
+  const [description, setDescription] = React.useState<string>("");
+  const [author, setAuthor] = React.useState<string>("");
+  const [image, setImage] = React.useState<any>();
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const formData = new FormData();
   formData.append("title", title);
@@ -22,6 +23,7 @@ export const BookForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${backendUrl}/books/upload-book`,
         {
@@ -34,10 +36,12 @@ export const BookForm = () => {
           withCredentials: true,
         }
       );
+      setLoading(false);
       toast.success(data.message, {
         position: "top-center",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.response.data.message, {
         position: "top-center",
       });
@@ -108,7 +112,17 @@ export const BookForm = () => {
                dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
-            Add Book &rarr;
+            {loading ? (
+              <div
+                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-gray-400 rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only"></span>
+              </div>
+            ) : (
+              <p>Add Book &rarr;</p>
+            )}
             <BottomGradient />
           </button>
 
