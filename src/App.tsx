@@ -35,7 +35,7 @@ import { EmailVerification } from "./pages/EmailVerification";
 function App() {
   const { isAuthenticated, setUser, setIsAuthenticated } =
     useContext(userContex);
-  const token = localStorage.getItem("APIStack-Auth_Token");
+  const token = localStorage.getItem("APIStack-auth_token");
   useEffect(() => {
     axios
       .get(`${backendUrl}/users/getuserprofile`, {
