@@ -13,7 +13,7 @@ export const instareelsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllinstareels = async () => {
     try {
-      const response = await fetch('https://api.apistack.site/instareels');
+      const response = await fetch('https://apistack.onrender.com/api/v1/instareels');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const instareelsData: Record<string, ApiSection> = {
   
   def get_all_instareels():
       try:
-          response = requests.get('https://api.example.com/instareels')
+          response = requests.get('https://apistack.onrender.com/api/v1/instareels')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const instareelsData: Record<string, ApiSection> = {
   
   const getAllinstareels = async (): Promise<instareels[]> => {
     try {
-      const response = await fetch('https://api.example.com/instareels');
+      const response = await fetch('https://apistack.onrender.com/api/v1/instareels');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -87,7 +87,7 @@ export const instareelsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getinstareelsById = async (id) => {
     try {
-      const response = await fetch(\`https://api.example.com/instareels/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/instareels/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -98,13 +98,13 @@ export const instareelsData: Record<string, ApiSection> = {
   
   def get_instareels_by_id(instareels_id):
       try:
-          response = requests.get(f'https://api.example.com/instareels/{instareels_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/instareels/{instareels_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getinstareelsById = async (id: number): Promise<instareels | null> => {
     try {
-      const response = await fetch(\`https://api.example.com/instareels/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/instareels/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -135,7 +135,7 @@ export const instareelsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandominstareels = async () => {
     try {
-      const response = await fetch('https://api.example.com/instareels/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/instareels/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -146,13 +146,13 @@ export const instareelsData: Record<string, ApiSection> = {
   
   def get_random_instareels():
       try:
-          response = requests.get('https://api.example.com/instareels/random')
+          response = requests.get('https://apistack.onrender.com/api/v1/instareels/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandominstareels = async (): Promise<instareels | null> => {
     try {
-      const response = await fetch('https://api.example.com/instareels/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/instareels/random');
       const data = await response.json();
       return data;
     } catch (error) {

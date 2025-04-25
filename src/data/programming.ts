@@ -13,7 +13,7 @@ export const programming_languagesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllprogramming_languages = async () => {
     try {
-      const response = await fetch('https://api.apistack.site/programming_languages');
+      const response = await fetch('https://apistack.onrender.com/api/v1/programming_languages');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const programming_languagesData: Record<string, ApiSection> = {
   
   def get_all_programming_languages():
       try:
-          response = requests.get('https://api.example.com/programming_languages')
+          response = requests.get('https://apistack.onrender.com/api/v1/programming_languages')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const programming_languagesData: Record<string, ApiSection> = {
   
   const getAllprogramming_languages = async (): Promise<Programming_Language[]> => {
     try {
-      const response = await fetch('https://api.example.com/programming_languages');
+      const response = await fetch('https://apistack.onrender.com/api/v1/programming_languages');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -91,7 +91,7 @@ export const programming_languagesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getProgramming_LanguageById = async (id) => {
     try {
-      const response = await fetch(\`https://api.example.com/programming_languages/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/programming_languages/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -102,13 +102,13 @@ export const programming_languagesData: Record<string, ApiSection> = {
   
   def get_Programming_Language_by_id(Programming_Language_id):
       try:
-          response = requests.get(f'https://api.example.com/programming_languages/{Programming_Language_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/programming_languages/{Programming_Language_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getProgramming_LanguageById = async (id: number): Promise<Programming_Language | null> => {
     try {
-      const response = await fetch(\`https://api.example.com/programming_languages/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/programming_languages/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -141,7 +141,7 @@ export const programming_languagesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomProgramming_Language = async () => {
     try {
-      const response = await fetch('https://api.example.com/programming_languages/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/programming_languages/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -152,13 +152,13 @@ export const programming_languagesData: Record<string, ApiSection> = {
   
   def get_random_Programming_Language():
       try:
-          response = requests.get('https://api.example.com/programming_languages/random')
+          response = requests.get('https://apistack.onrender.com/api/v1/programming_languages/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomProgramming_Language = async (): Promise<Programming_Language | null> => {
     try {
-      const response = await fetch('https://api.example.com/programming_languages/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/programming_languages/random');
       const data = await response.json();
       return data;
     } catch (error) {

@@ -6,9 +6,11 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { backendUrl } from "@/utils/server";
 import { userContex } from "@/context/userContex";
+import { useNavigate } from "react-router-dom";
 
 export const EmailVerification = () => {
   const { user } = React.useContext(userContex);
+  const navigate = useNavigate()
   const [otp, setOtp] = React.useState<string>("");
   const [loading, setLoading] = React.useState<boolean>(false);
   const [timeLeft, setTimeLeft] = React.useState<number>(30);
@@ -32,6 +34,7 @@ export const EmailVerification = () => {
         }
       );
       setLoading(false);
+      navigate("/user-profile")
       toast.success(data.message, {
         position: "top-center",
       });

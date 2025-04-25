@@ -13,7 +13,7 @@ export const restaurantsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllrestaurants = async () => {
     try {
-      const response = await fetch('https://api.apistack.site/restaurants');
+      const response = await fetch('https://apistack.onrender.com/api/v1/restaurants');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const restaurantsData: Record<string, ApiSection> = {
   
   def get_all_restaurants():
       try:
-          response = requests.get('https://api.example.com/restaurants')
+          response = requests.get('https://apistack.onrender.com/api/v1/restaurants')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const restaurantsData: Record<string, ApiSection> = {
   
   const getAllrestaurants = async (): Promise<Restaurant[]> => {
     try {
-      const response = await fetch('https://api.example.com/restaurants');
+      const response = await fetch('https://apistack.onrender.com/api/v1/restaurants');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -95,7 +95,7 @@ export const restaurantsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRestaurantById = async (id) => {
     try {
-      const response = await fetch(\`https://api.example.com/restaurants/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/restaurants/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -106,13 +106,13 @@ export const restaurantsData: Record<string, ApiSection> = {
   
   def get_Restaurant_by_id(Restaurant_id):
       try:
-          response = requests.get(f'https://api.example.com/restaurants/{Restaurant_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/restaurants/{Restaurant_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRestaurantById = async (id: number): Promise<Restaurant | null> => {
     try {
-      const response = await fetch(\`https://api.example.com/restaurants/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/restaurants/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -147,7 +147,7 @@ export const restaurantsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomRestaurant = async () => {
     try {
-      const response = await fetch('https://api.example.com/restaurants/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/restaurants/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -158,13 +158,13 @@ export const restaurantsData: Record<string, ApiSection> = {
   
   def get_random_Restaurant():
       try:
-          response = requests.get('https://api.example.com/restaurants/random')
+          response = requests.get('https://apistack.onrender.com/api/v1/restaurants/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomRestaurant = async (): Promise<Restaurant | null> => {
     try {
-      const response = await fetch('https://api.example.com/restaurants/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/restaurants/random');
       const data = await response.json();
       return data;
     } catch (error) {

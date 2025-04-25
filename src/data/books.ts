@@ -24,7 +24,7 @@ export const booksData: Record<string, ApiSection> = {
   
   def get_all_books():
       try:
-          response = requests.get('https://api.example.com/books')
+          response = requests.get('https://apistack.onrender.com/api/v1/books')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const booksData: Record<string, ApiSection> = {
   
   const getAllbooks = async (): Promise<Article[]> => {
     try {
-      const response = await fetch('https://api.example.com/books');
+      const response = await fetch('https://apistack.onrender.com/api/v1/books');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -88,7 +88,7 @@ export const booksData: Record<string, ApiSection> = {
         code: {
           javascript: `const getBookById = async (id) => {
     try {
-      const response = await fetch(\`https://api.example.com/books/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/books/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -99,13 +99,13 @@ export const booksData: Record<string, ApiSection> = {
   
   def get_book_by_id(article_id):
       try:
-          response = requests.get(f'https://api.example.com/books/{article_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/books/{article_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getArticleById = async (id: number): Promise<Article | null> => {
     try {
-      const response = await fetch(\`https://api.example.com/books/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/books/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -137,7 +137,7 @@ export const booksData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomBook = async () => {
     try {
-      const response = await fetch('https://api.example.com/books/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/books/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -148,13 +148,13 @@ export const booksData: Record<string, ApiSection> = {
   
   def get_random_article():
       try:
-          response = requests.get('https://api.example.com/books/random')
+          response = requests.get('https://apistack.onrender.com/api/v1/books/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomArticle = async (): Promise<Article | null> => {
     try {
-      const response = await fetch('https://api.example.com/books/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/books/random');
       const data = await response.json();
       return data;
     } catch (error) {
