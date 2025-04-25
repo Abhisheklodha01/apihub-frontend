@@ -2,7 +2,7 @@ import { ButtonOutline } from "@/components/Button";
 import { Link } from "react-router-dom";
 export const Admin = () => {
   return (
-    <div className="min-h-screen dark:">
+    <div className="min-h-screen dark">
       <div className="m-5 items-center flex justify-between">
         <h1 className="font-bold text-3xl text-purple-600">Admin Panel</h1>
         <Link to={"/view-data"}>
@@ -15,7 +15,7 @@ export const Admin = () => {
           </button>
         </Link>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-5 md:m-10">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-5 md:m-10 pb-10 pt-5">
         <div>
           <ButtonOutline text="Articles" />
         </div>
