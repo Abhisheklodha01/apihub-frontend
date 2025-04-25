@@ -13,7 +13,7 @@ export const quotesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllquotes = async () => {
     try {
-      const response = await fetch('https://api.apistack.site/quotes');
+      const response = await fetch('https://apistack.onrender.com/api/v1/quotes');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const quotesData: Record<string, ApiSection> = {
   
   def get_all_quotes():
       try:
-          response = requests.get('https://api.example.com/quotes')
+          response = requests.get('https://apistack.onrender.com/api/v1/quotes')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const quotesData: Record<string, ApiSection> = {
   
   const getAllquotes = async (): Promise<Quote[]> => {
     try {
-      const response = await fetch('https://api.example.com/quotes');
+      const response = await fetch('https://apistack.onrender.com/api/v1/quotes');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -85,7 +85,7 @@ export const quotesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getQuoteById = async (id) => {
     try {
-      const response = await fetch(\`https://api.example.com/quotes/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/quotes/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -96,13 +96,13 @@ export const quotesData: Record<string, ApiSection> = {
   
   def get_Quote_by_id(Quote_id):
       try:
-          response = requests.get(f'https://api.example.com/quotes/{Quote_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/quotes/{Quote_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getQuoteById = async (id: number): Promise<Quote | null> => {
     try {
-      const response = await fetch(\`https://api.example.com/quotes/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/quotes/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -132,7 +132,7 @@ export const quotesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomQuote = async () => {
     try {
-      const response = await fetch('https://api.example.com/quotes/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/quotes/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -143,13 +143,13 @@ export const quotesData: Record<string, ApiSection> = {
   
   def get_random_Quote():
       try:
-          response = requests.get('https://api.example.com/quotes/random')
+          response = requests.get('https://apistack.onrender.com/api/v1/quotes/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomQuote = async (): Promise<Quote | null> => {
     try {
-      const response = await fetch('https://api.example.com/quotes/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/quotes/random');
       const data = await response.json();
       return data;
     } catch (error) {

@@ -13,7 +13,7 @@ export const flowersData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllflowers = async () => {
     try {
-      const response = await fetch('https://api.apistack.site/flowers');
+      const response = await fetch('https://apistack.onrender.com/api/v1/flowers');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const flowersData: Record<string, ApiSection> = {
   
   def get_all_flowers():
       try:
-          response = requests.get('https://api.example.com/flowers')
+          response = requests.get('https://apistack.onrender.com/api/v1/flowers')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const flowersData: Record<string, ApiSection> = {
   
   const getAllflowers = async (): Promise<Flower[]> => {
     try {
-      const response = await fetch('https://api.example.com/flowers');
+      const response = await fetch('https://apistack.onrender.com/api/v1/flowers');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -91,7 +91,7 @@ export const flowersData: Record<string, ApiSection> = {
         code: {
           javascript: `const getFlowerById = async (id) => {
     try {
-      const response = await fetch(\`https://api.example.com/flowers/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/flowers/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -102,13 +102,13 @@ export const flowersData: Record<string, ApiSection> = {
   
   def get_Flower_by_id(Flower_id):
       try:
-          response = requests.get(f'https://api.example.com/flowers/{Flower_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/flowers/{Flower_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getFlowerById = async (id: number): Promise<Flower | null> => {
     try {
-      const response = await fetch(\`https://api.example.com/flowers/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/flowers/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -141,7 +141,7 @@ export const flowersData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomFlower = async () => {
     try {
-      const response = await fetch('https://api.example.com/flowers/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/flowers/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -152,13 +152,13 @@ export const flowersData: Record<string, ApiSection> = {
   
   def get_random_flower():
       try:
-          response = requests.get('https://api.example.com/flowers/random')
+          response = requests.get('https://apistack.onrender.com/api/v1/flowers/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomFlower = async (): Promise<Flower | null> => {
     try {
-      const response = await fetch('https://api.example.com/flowers/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/flowers/random');
       const data = await response.json();
       return data;
     } catch (error) {
