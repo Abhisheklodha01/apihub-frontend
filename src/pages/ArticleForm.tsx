@@ -45,7 +45,8 @@ export const ArticleForm = () => {
   return (
     <div className="min-h-screen dark">
       <div className="pb-40"></div>
-      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700">
+      <div className="ml-3 mr-3">
+      <div className="max-w-md w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700 ">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
           Welcome to API Stack
         </h2>
@@ -110,6 +111,7 @@ export const ArticleForm = () => {
 
           <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
         </form>
+      </div>
       </div>
     </div>
   );

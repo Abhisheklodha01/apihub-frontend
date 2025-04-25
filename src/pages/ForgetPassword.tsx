@@ -46,60 +46,62 @@ export default function ForgetPassword() {
   return (
     <div className="min-h-screen bg-black">
       <div className="pb-44"></div>
-      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700">
-        <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-          Welcome to API Stack
-        </h2>
-        <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-          Enter your email address and new password to reset your old password
-          and
-        </p>
+      <div className="ml-3 mr-3">
+        <div className="max-w-md w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700">
+          <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+            Welcome to API Stack
+          </h2>
+          <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+            Enter your email address and new password to reset your old password
+            and
+          </p>
 
-        <form className="my-8" onSubmit={handleSubmit}>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="email">Email Address</Label>
-            <Input
-              name="email"
-              id="email"
-              placeholder="email@apistack.site"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </LabelInputContainer>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="password">Password</Label>
-            <Input
-              name="password"
-              id="password"
-              placeholder="••••••••"
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </LabelInputContainer>
-          <button
-            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-            type="submit"
-          >
-            {loading ? (
-              <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
-                role="status"
-                aria-label="loading"
-              >
-                <span className="sr-only"></span>
-              </div>
-            ) : (
-              <p>Forgot Password &rarr;</p>
-            )}
-            <BottomGradient />
-          </button>
+          <form className="my-8" onSubmit={handleSubmit}>
+            <LabelInputContainer className="mb-4">
+              <Label htmlFor="email">Email Address</Label>
+              <Input
+                name="email"
+                id="email"
+                placeholder="email@apistack.site"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </LabelInputContainer>
+            <LabelInputContainer className="mb-4">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                name="password"
+                id="password"
+                placeholder="••••••••"
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </LabelInputContainer>
+            <button
+              className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+              type="submit"
+            >
+              {loading ? (
+                <div
+                  className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
+                  role="status"
+                  aria-label="loading"
+                >
+                  <span className="sr-only"></span>
+                </div>
+              ) : (
+                <p>Forgot Password &rarr;</p>
+              )}
+              <BottomGradient />
+            </button>
 
-          <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-        </form>
+            <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+          </form>
+        </div>
       </div>
     </div>
   );

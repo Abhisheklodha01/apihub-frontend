@@ -41,7 +41,7 @@ export const UserProfile = () => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-5 md:m-10 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-5 md:m-10 mt-10 pb-10">
         <Link to={"/api/docs"}>
           <button
             className="border border-slate-200 bg-white shadow-sm hover:bg-slate-100

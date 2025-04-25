@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export const EmailVerification = () => {
   const { user } = React.useContext(userContex);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [otp, setOtp] = React.useState<string>("");
   const [loading, setLoading] = React.useState<boolean>(false);
   const [timeLeft, setTimeLeft] = React.useState<number>(30);
@@ -34,7 +34,7 @@ export const EmailVerification = () => {
         }
       );
       setLoading(false);
-      navigate("/user-profile")
+      navigate("/user-profile");
       toast.success(data.message, {
         position: "top-center",
       });
@@ -89,58 +89,60 @@ export const EmailVerification = () => {
   return (
     <div className="min-h-screen dark">
       <div className="pb-40"></div>
-      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700">
-        <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-          Verify your email
-        </h2>
-        <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-          please check your email we have sent the verification code
-        </p>
+      <div className="ml-3 mr-3">
+        <div className="max-w-md w-full mx-auto rounded-xl md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border border-slate-700">
+          <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+            Verify your email
+          </h2>
+          <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+            please check your email we have sent the verification code
+          </p>
 
-        <form className="my-8" onSubmit={handleSubmit}>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="password">Verification code</Label>
-            <Input
-              name="otp"
-              id="otp"
-              placeholder="enter verification code"
-              type="text"
-              value={otp}
-              required
-              maxLength={6}
-              disabled={loading === true}
-              onChange={(e) => setOtp(e.target.value)}
-            />
-          </LabelInputContainer>
-          <div className="mb-4 font-semibold -mt-2 flex justify-between">
-            <button onClick={handleResendOTP} className=" text-blue-600">
-              Resend OTP?
+          <form className="my-8" onSubmit={handleSubmit}>
+            <LabelInputContainer className="mb-4">
+              <Label htmlFor="password">Verification code</Label>
+              <Input
+                name="otp"
+                id="otp"
+                placeholder="enter verification code"
+                type="text"
+                value={otp}
+                required
+                maxLength={6}
+                disabled={loading === true}
+                onChange={(e) => setOtp(e.target.value)}
+              />
+            </LabelInputContainer>
+            <div className="mb-4 font-semibold -mt-2 flex justify-between">
+              <button onClick={handleResendOTP} className=" text-blue-600">
+                Resend OTP?
+              </button>
+              <p className="text-white">
+                <span className="text-sm">Resend OTP after:</span>{" "}
+                {isActive ? timeLeft : "00:00"}
+              </p>
+            </div>
+            <button
+              className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+              type="submit"
+            >
+              {loading ? (
+                <div
+                  className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
+                  role="status"
+                  aria-label="loading"
+                >
+                  <span className="sr-only"></span>
+                </div>
+              ) : (
+                <p>Verify Email &rarr;</p>
+              )}
+              <BottomGradient />
             </button>
-            <p className="text-white">
-              <span className="text-sm">Resend OTP after:</span>{" "}
-              {isActive ? timeLeft : "00:00"}
-            </p>
-          </div>
-          <button
-            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-            type="submit"
-          >
-            {loading ? (
-              <div
-                className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-slate-100 rounded-full"
-                role="status"
-                aria-label="loading"
-              >
-                <span className="sr-only"></span>
-              </div>
-            ) : (
-              <p>Verify Email &rarr;</p>
-            )}
-            <BottomGradient />
-          </button>
 
-          <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-        </form>
+            <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+          </form>
+        </div>
       </div>
     </div>
   );
