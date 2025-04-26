@@ -40,6 +40,12 @@ export const Food_NutritionForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setCalories("")
+      setCarbohydrates("")
+      setFats("")
+      setFood_Name("")
+      setServingSize("")
+      setProtein("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

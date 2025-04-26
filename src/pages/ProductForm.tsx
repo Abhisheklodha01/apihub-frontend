@@ -40,6 +40,12 @@ export const ProductForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setAvailableOn("")
+      setCategories("")
+      setDescription("")
+      setName("")
+      setPrice("")
+      setUrl("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

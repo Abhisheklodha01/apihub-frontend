@@ -38,6 +38,11 @@ export const ProgrammingForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setCreator("")
+      setDescription("")
+      setName("")
+      setRuntime("")
+      setYear("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

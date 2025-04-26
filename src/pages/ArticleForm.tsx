@@ -34,6 +34,9 @@ export const ArticleForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setAuthor("")
+      setContent("")
+      setTitle("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

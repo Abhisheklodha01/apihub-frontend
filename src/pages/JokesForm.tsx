@@ -34,6 +34,9 @@ export const JokesForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setTitle("")
+      setType("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

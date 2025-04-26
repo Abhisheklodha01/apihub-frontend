@@ -34,6 +34,9 @@ export const Youtube_VideoForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setTitle("")
+      setUrl("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

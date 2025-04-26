@@ -40,6 +40,10 @@ export const BookForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setAuthor("")
+      setDescription("")
+      setImage("")
+      setTitle("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {
