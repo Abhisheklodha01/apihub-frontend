@@ -38,6 +38,9 @@ export const ImageForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setImage("")
+      setName("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

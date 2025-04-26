@@ -38,6 +38,11 @@ export const CountryForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setCapital("")
+      setCurrency("")
+      setDescription("")
+      setName("")
+      setPopulation("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

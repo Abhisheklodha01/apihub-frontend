@@ -42,6 +42,11 @@ export const FlowerForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setColor("")
+      setDescription("")
+      setFlowerType("")
+      setImage("")
+      setName("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

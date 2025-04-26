@@ -42,6 +42,13 @@ export const ResturentsForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setCity("")
+      setDescription("")
+      setFoodType("")
+      setLocation("")
+      setName("")
+      setPriceRange("")
+      setRestaurantType("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

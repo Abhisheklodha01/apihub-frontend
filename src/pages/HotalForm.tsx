@@ -38,6 +38,11 @@ export const HotalForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setCity("")
+      setDescription("")
+      setLocation("")
+      setName("")
+      setPriceRange("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

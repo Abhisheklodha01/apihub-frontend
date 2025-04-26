@@ -44,6 +44,12 @@ export const CarForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setImage("")
+      setMileage("")
+      setModel("")
+      setName("")
+      setYear("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

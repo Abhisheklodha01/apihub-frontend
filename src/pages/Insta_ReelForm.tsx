@@ -38,6 +38,9 @@ export const Insta_ReelsForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setTitle("")
+      setVideo("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

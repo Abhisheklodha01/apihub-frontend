@@ -42,6 +42,11 @@ export const MovieForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setDirector("")
+      setImage("")
+      setRealeseDate("")
+      setTitle("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

@@ -32,6 +32,8 @@ export const QuotesForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setAuthor("")
+      setQuote("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

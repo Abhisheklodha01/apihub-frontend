@@ -38,6 +38,11 @@ export const CatForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setBreed("")
+      setDescription("")
+      setImageUrl("")
+      setLocation("")
+      setName("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

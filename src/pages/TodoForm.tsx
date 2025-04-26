@@ -32,6 +32,8 @@ export const TodoForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setName("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {

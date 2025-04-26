@@ -40,6 +40,10 @@ export const PlantForm = () => {
       toast.success(data.message, {
         position: "top-center",
       });
+      setDescription("")
+      setImage("")
+      setName("")
+      setSpecies("")
     } catch (error: any) {
       setLoading(false);
       toast.error(error.response.data.message, {
