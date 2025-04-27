@@ -13,7 +13,7 @@ export const instareelsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllinstareels = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/instareels');
+      const response = await fetch('https://apistack.onrender.com/api/v1/instareels/get-reels');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const instareelsData: Record<string, ApiSection> = {
   
   def get_all_instareels():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/instareels')
+          response = requests.get('https://apistack.onrender.com/api/v1/instareels/get-reels')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const instareelsData: Record<string, ApiSection> = {
   
   const getAllinstareels = async (): Promise<instareels[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/instareels');
+      const response = await fetch('https://apistack.onrender.com/api/v1/instareels/get-reels');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -87,7 +87,7 @@ export const instareelsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getinstareelsById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/instareels/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/instareels/get-reels/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -98,13 +98,13 @@ export const instareelsData: Record<string, ApiSection> = {
   
   def get_instareels_by_id(instareels_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/instareels/{instareels_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/instareels/get-reels/{instareels_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getinstareelsById = async (id: number): Promise<instareels | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/instareels/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/instareels/get-reels/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
