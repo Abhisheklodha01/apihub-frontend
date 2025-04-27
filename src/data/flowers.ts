@@ -13,7 +13,7 @@ export const flowersData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllflowers = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/flowers');
+      const response = await fetch('https://apistack.onrender.com/api/v1/flowers/get-flowers');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const flowersData: Record<string, ApiSection> = {
   
   def get_all_flowers():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/flowers')
+          response = requests.get('https://apistack.onrender.com/api/v1/flowers/get-flowers')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const flowersData: Record<string, ApiSection> = {
   
   const getAllflowers = async (): Promise<Flower[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/flowers');
+      const response = await fetch('https://apistack.onrender.com/api/v1/flowers/get-flowers');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -91,7 +91,7 @@ export const flowersData: Record<string, ApiSection> = {
         code: {
           javascript: `const getFlowerById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/flowers/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/flowers/get-flower/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -102,13 +102,13 @@ export const flowersData: Record<string, ApiSection> = {
   
   def get_Flower_by_id(Flower_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/flowers/{Flower_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/flowers/get-flower/{Flower_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getFlowerById = async (id: number): Promise<Flower | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/flowers/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/flowers/get-flower/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {

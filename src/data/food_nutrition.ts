@@ -13,7 +13,7 @@ export const food_nutrientsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllfood_nutrients = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients');
+      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients/get-foodnutritions');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const food_nutrientsData: Record<string, ApiSection> = {
   
   def get_all_food_nutrients():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/food_nutrients')
+          response = requests.get('https://apistack.onrender.com/api/v1/food_nutrients/get-foodnutritions')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const food_nutrientsData: Record<string, ApiSection> = {
   
   const getAllfood_nutrients = async (): Promise<food_nutrient[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients');
+      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients/get-foodnutritions');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -93,7 +93,7 @@ export const food_nutrientsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getfood_nutrientById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/food_nutrients/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/food_nutrients/get-foodnutrition/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -104,13 +104,13 @@ export const food_nutrientsData: Record<string, ApiSection> = {
   
   def get_food_nutrient_by_id(food_nutrient_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/food_nutrients/{food_nutrient_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/food_nutrients/get-foodnutrition/{food_nutrient_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getfood_nutrientById = async (id: number): Promise<food_nutrient | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/food_nutrients/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/food_nutrients/get-foodnutrition/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -138,13 +138,13 @@ export const food_nutrientsData: Record<string, ApiSection> = {
       },
       getRandom: {
         name: "Get Random food_nutrient",
-        path: "/food_nutrients/random",
+        path: "/food_nutrients/get-random-foodnutrientation",
         method: "GET",
         description: "Retrieve a random food_nutrient",
         code: {
           javascript: `const getRandomfood_nutrient = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients/get-random-foodnutrientation');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -155,13 +155,13 @@ export const food_nutrientsData: Record<string, ApiSection> = {
   
   def get_random_food_nutrient():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/food_nutrients/random')
+          response = requests.get('https://apistack.onrender.com/api/v1/food_nutrients/get-random-foodnutrientation')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomfood_nutrient = async (): Promise<food_nutrient | null> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients/random');
+      const response = await fetch('https://apistack.onrender.com/api/v1/food_nutrients/get-random-foodnutrientation');
       const data = await response.json();
       return data;
     } catch (error) {

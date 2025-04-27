@@ -13,7 +13,7 @@ export const moviesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllmovies = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/movies');
+      const response = await fetch('https://apistack.onrender.com/api/v1/movies/get-movies');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const moviesData: Record<string, ApiSection> = {
   
   def get_all_movies():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/movies')
+          response = requests.get('https://apistack.onrender.com/api/v1/movies/get-movies')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const moviesData: Record<string, ApiSection> = {
   
   const getAllmovies = async (): Promise<Movie[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/movies');
+      const response = await fetch('https://apistack.onrender.com/api/v1/movies/get-movies');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -91,7 +91,7 @@ export const moviesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getMovieById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/movies/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/movies/get-movies/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -102,13 +102,13 @@ export const moviesData: Record<string, ApiSection> = {
   
   def get_Movie_by_id(Movie_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/movies/{Movie_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/movies/get-movies/{Movie_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getMovieById = async (id: number): Promise<Movie | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/movies/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/movies/get-movies/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {

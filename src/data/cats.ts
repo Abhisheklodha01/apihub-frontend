@@ -13,7 +13,7 @@ export const catsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllcats = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/cats');
+      const response = await fetch('https://apistack.onrender.com/api/v1/cats/get-cats');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const catsData: Record<string, ApiSection> = {
   
   def get_all_cats():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/cats')
+          response = requests.get('https://apistack.onrender.com/api/v1/cats/get-cats')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const catsData: Record<string, ApiSection> = {
   
   const getAllcats = async (): Promise<Cats[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/cats');
+      const response = await fetch('https://apistack.onrender.com/api/v1/cats/get-cats');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -91,7 +91,7 @@ export const catsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getCatsById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/cats/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/cats/get-cat/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -102,13 +102,13 @@ export const catsData: Record<string, ApiSection> = {
   
   def get_Cats_by_id(Cats_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/cats/{Cats_id}')
+          response = requests.get(f'https://apistack.onrender.com/api/v1/cats/get-cat/{Cats_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getCatsById = async (id: number): Promise<Cats | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/cats/\${id}\`);
+      const response = await fetch(\`https://apistack.onrender.com/api/v1/cats/get-cat/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
