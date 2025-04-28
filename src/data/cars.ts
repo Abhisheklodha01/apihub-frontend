@@ -13,7 +13,7 @@ export const carsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllCars = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/cars/get-cars');
+      const response = await fetch('https://api.apistack.site/api/v1/cars/get-cars');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const carsData: Record<string, ApiSection> = {
   
   def get_all_cars():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/cars/get-cars')
+          response = requests.get('https://api.apistack.site/api/v1/cars/get-cars')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const carsData: Record<string, ApiSection> = {
   
   const getAllCars = async (): Promise<car[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/cars/get-cars');
+      const response = await fetch('https://api.apistack.site/api/v1/cars/get-cars');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -60,7 +60,7 @@ export const carsData: Record<string, ApiSection> = {
       "year": 2021,
       "mileage": 12000,
       "description": "A sporty and comfortable sedan with advanced safety features.",
-      "imageUrl": "https://apistack.onrender.com/api/v1/car-images/honda-civic.jpg",
+      "imageUrl": "https://api.apistack.site/api/v1/car-images/honda-civic.jpg",
       "createdAt": "2025-01-22T08:30:00Z",
       "updatedAt": "2025-01-22T08:30:00Z"
     },
@@ -71,7 +71,7 @@ export const carsData: Record<string, ApiSection> = {
       "year": 2020,
       "mileage": 15000,
       "description": "A well-maintained compact sedan with excellent fuel efficiency.",
-      "imageUrl": "https://apistack.onrender.com/api/v1/car-images/toyota-corolla.jpg",
+      "imageUrl": "https://api.apistack.site/api/v1/car-images/toyota-corolla.jpg",
       "createdAt": "2025-01-23T10:00:00Z",
       "updatedAt": "2025-01-23T10:00:00Z"
     }
@@ -95,7 +95,7 @@ export const carsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getCarById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/cars/get-car/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/cars/get-car/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -106,13 +106,13 @@ export const carsData: Record<string, ApiSection> = {
   
   def get_car_by_id(car_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/cars/get-car/{car_id}')
+          response = requests.get(f'https://api.apistack.site/api/v1/cars/get-car/{car_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getCarById = async (id: number): Promise<Car | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/cars/get-car/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/cars/get-car/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -131,7 +131,7 @@ export const carsData: Record<string, ApiSection> = {
       "year": 2020,
       "mileage": 15000,
       "description": "A well-maintained compact sedan with excellent fuel efficiency.",
-      "imageUrl": "https://apistack.onrender.com/api/v1/car-images/toyota-corolla.jpg",
+      "imageUrl": "https://api.apistack.site/api/v1/car-images/toyota-corolla.jpg",
       "createdAt": "2025-01-23T10:00:00Z",
       "updatedAt": "2025-01-23T10:00:00Z"
     }
@@ -146,7 +146,7 @@ export const carsData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomcar = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/cars/random');
+      const response = await fetch('https://api.apistack.site/api/v1/cars/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -157,13 +157,13 @@ export const carsData: Record<string, ApiSection> = {
   
   def get_random_car():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/cars/random')
+          response = requests.get('https://api.apistack.site/api/v1/cars/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomCar = async (): Promise<Car | null> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/cars/random');
+      const response = await fetch('https://api.apistack.site/api/v1/cars/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -183,7 +183,7 @@ export const carsData: Record<string, ApiSection> = {
       "year": 2021,
       "mileage": 12000,
       "description": "A sporty and comfortable sedan with advanced safety features.",
-      "imageUrl": "https://apistack.onrender.com/api/v1/car-images/honda-civic.jpg",
+      "imageUrl": "https://api.apistack.site/api/v1/car-images/honda-civic.jpg",
       "createdAt": "2025-01-22T08:30:00Z",
       "updatedAt": "2025-01-22T08:30:00Z"
     },

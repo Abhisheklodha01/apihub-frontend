@@ -13,7 +13,7 @@ export const articlesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllArticles = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/articles/get-articles');
+      const response = await fetch('https://api.apistack.site/api/v1/articles/get-articles');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const articlesData: Record<string, ApiSection> = {
   
   def get_all_articles():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/articles/get-articles')
+          response = requests.get('https://api.apistack.site/api/v1/articles/get-articles')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const articlesData: Record<string, ApiSection> = {
   
   const getAllArticles = async (): Promise<Article[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/articles/get-articles');
+      const response = await fetch('https://api.apistack.site/api/v1/articles/get-articles');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -82,7 +82,7 @@ export const articlesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getArticleById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/articles/get-article/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/articles/get-article/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -93,13 +93,13 @@ export const articlesData: Record<string, ApiSection> = {
   
   def get_article_by_id(article_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/articles/get-article/{article_id}')
+          response = requests.get(f'https://api.apistack.site/api/v1/articles/get-article/{article_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getArticleById = async (id: number): Promise<Article | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/articles/get-article/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/articles/get-article/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -128,7 +128,7 @@ export const articlesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomArticle = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/articles/get-random-article');
+      const response = await fetch('https://api.apistack.site/api/v1/articles/get-random-article');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -139,13 +139,13 @@ export const articlesData: Record<string, ApiSection> = {
   
   def get_random_article():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/articles/get-random-article')
+          response = requests.get('https://api.apistack.site/api/v1/articles/get-random-article')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomArticle = async (): Promise<Article | null> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/articles/get-random-article');
+      const response = await fetch('https://api.apistack.site/api/v1/articles/get-random-article');
       const data = await response.json();
       return data;
     } catch (error) {

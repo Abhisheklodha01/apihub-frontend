@@ -13,7 +13,7 @@ export const todosData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAlltodos = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/todos/get-todo');
+      const response = await fetch('https://api.apistack.site/api/v1/todos/get-todo');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const todosData: Record<string, ApiSection> = {
   
   def get_all_todos():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/todos/get-todo')
+          response = requests.get('https://api.apistack.site/api/v1/todos/get-todo')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const todosData: Record<string, ApiSection> = {
   
   const getAlltodos = async (): Promise<Todo[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/todos/get-todo');
+      const response = await fetch('https://api.apistack.site/api/v1/todos/get-todo');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -85,7 +85,7 @@ export const todosData: Record<string, ApiSection> = {
         code: {
           javascript: `const getTodoById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/todos/get-todo/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/todos/get-todo/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -96,13 +96,13 @@ export const todosData: Record<string, ApiSection> = {
   
   def get_Todo_by_id(Todo_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/todos/get-todo/{Todo_id}')
+          response = requests.get(f'https://api.apistack.site/api/v1/todos/get-todo/{Todo_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getTodoById = async (id: number): Promise<Todo | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/todos/get-todo/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/todos/get-todo/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -132,7 +132,7 @@ export const todosData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomTodo = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/todos/random');
+      const response = await fetch('https://api.apistack.site/api/v1/todos/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -143,13 +143,13 @@ export const todosData: Record<string, ApiSection> = {
   
   def get_random_Todo():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/todos/random')
+          response = requests.get('https://api.apistack.site/api/v1/todos/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomTodo = async (): Promise<Todo | null> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/todos/random');
+      const response = await fetch('https://api.apistack.site/api/v1/todos/random');
       const data = await response.json();
       return data;
     } catch (error) {

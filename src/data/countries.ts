@@ -13,7 +13,7 @@ export const countriesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllcountries = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/countries/get-countries');
+      const response = await fetch('https://api.apistack.site/api/v1/countries/get-countries');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const countriesData: Record<string, ApiSection> = {
   
   def get_all_countries():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/countries/get-countries')
+          response = requests.get('https://api.apistack.site/api/v1/countries/get-countries')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const countriesData: Record<string, ApiSection> = {
   
   const getAllcountries = async (): Promise<Country[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/countries/get-countries');
+      const response = await fetch('https://api.apistack.site/api/v1/countries/get-countries');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -91,7 +91,7 @@ export const countriesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getCountryById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/countries/get-country/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/countries/get-country/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -102,13 +102,13 @@ export const countriesData: Record<string, ApiSection> = {
   
   def get_Country_by_id(Country_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/countries/get-country/{Country_id}')
+          response = requests.get(f'https://api.apistack.site/api/v1/countries/get-country/{Country_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getCountryById = async (id: number): Promise<Country | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/countries/get-country/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/countries/get-country/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -141,7 +141,7 @@ export const countriesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomCountry = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/countries/random');
+      const response = await fetch('https://api.apistack.site/api/v1/countries/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -152,13 +152,13 @@ export const countriesData: Record<string, ApiSection> = {
   
   def get_random_Country():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/countries/random')
+          response = requests.get('https://api.apistack.site/api/v1/countries/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomCountry = async (): Promise<Country | null> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/countries/random');
+      const response = await fetch('https://api.apistack.site/api/v1/countries/random');
       const data = await response.json();
       return data;
     } catch (error) {

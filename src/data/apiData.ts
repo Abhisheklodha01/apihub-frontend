@@ -5,7 +5,7 @@ import { catsData } from "./cats";
 import { countriesData } from "./countries";
 import { dogsData } from "./dogs";
 import { flowersData } from "./flowers";
-import { food_nutrientsData } from "./food_nutrition";
+import { foodnutritionsData } from "./food_nutrition";
 import { hotelsData } from "./hotel";
 import { imagesData } from "./image";
 import { instareelsData } from "./instaReels";
@@ -54,7 +54,7 @@ export const apiData: Record<string, ApiSection> = {
   countries: countriesData.countries,
   dogs: dogsData.dogs,
   flowers: flowersData.flowers,
-  food_nutrients: food_nutrientsData.food_nutrients,
+  food_nutrients: foodnutritionsData.food_nutrients,
   hotels: hotelsData.hotels,
   images: imagesData.images,
   instareels: instareelsData.instareels,
