@@ -54,7 +54,7 @@ export const apiData: Record<string, ApiSection> = {
   countries: countriesData.countries,
   dogs: dogsData.dogs,
   flowers: flowersData.flowers,
-  food_nutrients: foodnutritionsData.food_nutrients,
+  food_nutrients: foodnutritionsData.foodnutritions,
   hotels: hotelsData.hotels,
   images: imagesData.images,
   instareels: instareelsData.instareels,
