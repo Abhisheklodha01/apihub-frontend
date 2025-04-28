@@ -13,7 +13,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllyoutube_video = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/youtube_video/get-youtube-video');
+      const response = await fetch('https://api.apistack.site/api/v1/youtube/get-youtube-video');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
   
   def get_all_youtube_video():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/youtube_video/get-youtube-video')
+          response = requests.get('https://api.apistack.site/api/v1/youtube/get-youtube-video')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
   
   const getAllyoutube_video = async (): Promise<Youtube_Video[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/youtube_video/get-youtube-video');
+      const response = await fetch('https://api.apistack.site/api/v1/youtube/get-youtube-video');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -88,7 +88,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
         code: {
           javascript: `const getYoutube_VideoById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/youtube_video/get-youtube-video/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/youtube/get-youtube-video/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -99,13 +99,13 @@ export const youtube_videoData: Record<string, ApiSection> = {
   
   def get_Youtube_Video_by_id(Youtube_Video_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/youtube_video/get-youtube-video/{Youtube_Video_id}')
+          response = requests.get(f'https://api.apistack.site/api/v1/youtube/get-youtube-video/{Youtube_Video_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getYoutube_VideoById = async (id: number): Promise<Youtube_Video | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/youtube_video/get-youtube-video/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/youtube/get-youtube-video/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -136,7 +136,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomYoutube_Video = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/youtube_video/random');
+      const response = await fetch('https://api.apistack.site/api/v1/youtube/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -147,13 +147,13 @@ export const youtube_videoData: Record<string, ApiSection> = {
   
   def get_random_Youtube_Video():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/youtube_video/random')
+          response = requests.get('https://api.apistack.site/api/v1/youtube/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomYoutube_Video = async (): Promise<Youtube_Video | null> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/youtube_video/random');
+      const response = await fetch('https://api.apistack.site/api/v1/youtube/random');
       const data = await response.json();
       return data;
     } catch (error) {

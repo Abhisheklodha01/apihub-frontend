@@ -13,7 +13,7 @@ export const imagesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllimages = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/images/get-images');
+      const response = await fetch('https://api.apistack.site/api/v1/images/get-images');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const imagesData: Record<string, ApiSection> = {
   
   def get_all_images():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/images/get-images')
+          response = requests.get('https://api.apistack.site/api/v1/images/get-images')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const imagesData: Record<string, ApiSection> = {
   
   const getAllimages = async (): Promise<Image[]> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/images/get-images');
+      const response = await fetch('https://api.apistack.site/api/v1/images/get-images');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -87,7 +87,7 @@ export const imagesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getImageById = async (id) => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/images/get-images/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/images/get-images/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -98,13 +98,13 @@ export const imagesData: Record<string, ApiSection> = {
   
   def get_Image_by_id(Image_id):
       try:
-          response = requests.get(f'https://apistack.onrender.com/api/v1/images/get-images/{Image_id}')
+          response = requests.get(f'https://api.apistack.site/api/v1/images/get-images/{Image_id}')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getImageById = async (id: number): Promise<Image | null> => {
     try {
-      const response = await fetch(\`https://apistack.onrender.com/api/v1/images/get-images/\${id}\`);
+      const response = await fetch(\`https://api.apistack.site/api/v1/images/get-images/\${id}\`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -135,7 +135,7 @@ export const imagesData: Record<string, ApiSection> = {
         code: {
           javascript: `const getRandomImage = async () => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/images/random');
+      const response = await fetch('https://api.apistack.site/api/v1/images/random');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -146,13 +146,13 @@ export const imagesData: Record<string, ApiSection> = {
   
   def get_random_Image():
       try:
-          response = requests.get('https://apistack.onrender.com/api/v1/images/random')
+          response = requests.get('https://api.apistack.site/api/v1/images/random')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
           typescript: `const getRandomImage = async (): Promise<Image | null> => {
     try {
-      const response = await fetch('https://apistack.onrender.com/api/v1/images/random');
+      const response = await fetch('https://api.apistack.site/api/v1/images/random');
       const data = await response.json();
       return data;
     } catch (error) {
