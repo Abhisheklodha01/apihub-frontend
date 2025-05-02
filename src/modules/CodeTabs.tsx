@@ -11,7 +11,7 @@ const CodeTabs = () => {
   const codeExamples: CodeExamples = {
     javascript: `const fetch = require('node-fetch');
 
-const url = 'https://example.com/public/quotes/quote/random';
+const url = 'https://api.apistack.site/api/v1/quotes/quote/random';
 const options = {method: 'GET', headers: {accept: 'application/json'}};
 
 try {
@@ -23,7 +23,7 @@ try {
 }`,
     python: `import requests
 
-url = 'https://example.com/public/quotes/quote/random'
+url = 'https://api.apistack.site/api/v1/quotes/quote/random'
 headers = {'accept': 'application/json'}
 
 try:
@@ -33,14 +33,14 @@ try:
 except Exception as e:
     print(e)`,
     curl: `curl --request GET \
-    --url 'https://example.com/public/quotes/quote/random' \
+    --url 'https://api.apistack.site/api/v1/quotes/quote/random' \
     --header 'accept: application/json'`,
 
     ruby: `require 'net/http'
 require 'uri'
 require 'json'
 
-url = 'https://example.com/public/quotes/quote/random'
+url = 'https://api.apistack.site/api/v1/quotes/quote/random'
 
 begin
   uri = URI(url)
@@ -67,10 +67,10 @@ use serde_json::Value;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    let url = "https://example.com/public/quotes/quote/random";
+    let url = "https://api.apistack.site/api/v1/quotes/quote/random";
 
     // Send the GET request
-    let response = reqwest::Client::new()
+    let response = reqest::Client::new()
         .get(url)
         .header("Accept", "application/json")
         .send()
