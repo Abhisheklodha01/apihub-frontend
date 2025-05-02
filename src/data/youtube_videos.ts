@@ -13,7 +13,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
         code: {
           javascript: `const getAllyoutube_video = async () => {
     try {
-      const response = await fetch('https://api.apistack.site/api/v1/youtube/get-youtube-video');
+      const response = await fetch('https://api.apistack.site/api/v1/youtube/get-youtube-videos');
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
   
   def get_all_youtube_video():
       try:
-          response = requests.get('https://api.apistack.site/api/v1/youtube/get-youtube-video')
+          response = requests.get('https://api.apistack.site/api/v1/youtube/get-youtube-videos')
           return response.json()
       except requests.RequestException as e:
           print(f"Error: {e}")`,
@@ -37,7 +37,7 @@ export const youtube_videoData: Record<string, ApiSection> = {
   
   const getAllyoutube_video = async (): Promise<Youtube_Video[]> => {
     try {
-      const response = await fetch('https://api.apistack.site/api/v1/youtube/get-youtube-video');
+      const response = await fetch('https://api.apistack.site/api/v1/youtube/get-youtube-videos');
       const data = await response.json();
       return data;
     } catch (error) {

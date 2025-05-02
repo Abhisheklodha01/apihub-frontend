@@ -31,6 +31,7 @@ import { backendUrl } from "./utils/server";
 import axios from "axios";
 import { UserProfile } from "./pages/UserProfile";
 import { EmailVerification } from "./pages/EmailVerification";
+import ViewData from "./pages/ViewData";
 
 function App() {
   const { isAuthenticated, setUser, setIsAuthenticated } =
@@ -89,6 +90,7 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/auth/verify-email" element={<EmailVerification />} />
         <Route path="api/docs/" element={<ApiDocs />} />
+        <Route path="/admin/data" element={<ViewData />} />
       </Routes>
     </>
   );

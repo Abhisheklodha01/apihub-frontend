@@ -5,7 +5,7 @@ export const Admin = () => {
     <div className="min-h-screen dark">
       <div className="m-5 items-center flex justify-between">
         <h1 className="font-bold text-3xl text-purple-600">Admin Panel</h1>
-        <Link to={"/view-data"}>
+        <Link to={"/admin/data"}>
           <button
             className="px-8 py-2 rounded-full bg-gradient-to-b from-blue-500
              to-blue-600 text-white focus:ring-2 focus:ring-blue-400
