@@ -7,6 +7,11 @@ export const UserProfile = () => {
   if (user?.isVerified === false) {
     navigate("/auth/verify-email");
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem("APIStack-auth_token")
+    navigate("/auth/login")
+  }
   return (
     <div className="min-h-screen dark:">
       <div className="m-5 items-center flex justify-between">
@@ -17,30 +22,38 @@ export const UserProfile = () => {
           <button
             className="px-8 py-2 rounded-full bg-gradient-to-b from-blue-500
              to-blue-600 text-white focus:ring-2 focus:ring-blue-400
-              hover:shadow-xl transition duration-200 "
+              hover:shadow-xl transition duration-200"
           >
             Visit Docs
           </button>
         </Link>
       </div>
-      <div className="text-xl font-bold mt-10">
+      <div className="text-lg font-bold mt-10">
         <h1 className="ml-4 md:ml-16">Your Details</h1>
         <div className="ml-6 md:ml-20">
           <p>
-            User ID: <span className="font-semibold text-lg">{user?._id}</span>
+            User ID: <span className="font-semibold ">{user?._id}</span>
           </p>
           <p>
-            Name: <span className="font-semibold text-lg">{user?.name}</span>
+            Name: <span className="font-semibold ">{user?.name}</span>
           </p>
           <p>
-            Email: <span className="font-semibold text-lg">{user?.email}</span>
+            Email: <span className="font-semibold ">{user?.email}</span>
           </p>
           <p>
             Phone Number:{" "}
-            <span className="font-semibold text-lg">{user?.phoneNumber}</span>
+            <span className="font-semibold">{user?.phoneNumber}</span>
           </p>
         </div>
       </div>
+      <button
+        className="px-8 py-2 rounded-full bg-gradient-to-b from-blue-500
+             to-blue-600 text-white focus:ring-2 focus:ring-blue-400
+              hover:shadow-xl transition duration-200 ml-4 md:ml-16 mt-5 mb-5 "
+        onClick={handleLogout}      
+      >
+        Logout
+      </button>
       <div className="grid grid-cols-1 md:grid-cols-6 gap-5 md:m-10 mt-10 pb-10">
         <Link to={"/api/docs"}>
           <button
